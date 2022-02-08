@@ -1,3 +1,5 @@
+const carwiData = require("./carwi.json")
+
 const express = require("express");
 
 require("dotenv").config();
@@ -8,6 +10,8 @@ app.set("view engine", "hbs");
 
 app.set("views", __dirname + "/views");
 
+hbs.registerPartials(__dirname + "/views/partials")
+
 app.use(express.static("public"));
 
 app.get("/home", (req, res, next) => res.render("home"));
@@ -15,10 +19,8 @@ app.get("/home", (req, res, next) => res.render("home"));
 app.get("/about", (req, res, next) => res.render("about"));
 
 app.get("/", (req, res, next) =>
-  res.render("index", {
-    name: "Carwi",
-    hobbies: ["coding", "technology", "mountaneering"]
-  })
+//if you need specific format for the data prepare it outside of the render and then render it
+  res.render("index", carwiData)
 );
 
 const PORT = process.env.PORT || 3000;

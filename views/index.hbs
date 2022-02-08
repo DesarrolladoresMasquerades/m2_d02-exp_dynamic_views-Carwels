@@ -1,25 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Handlebars Intro</title>
-</head>
-<body>
-    <h2>Hello this is the INDEX page of {{name}} !</h2>
-    <!-- we don't have to put '/public/images/name-opf-image.jpg' since public
+<h2>Hello this is the INDEX page of {{name}} !</h2>
+<!-- we don't have to put '/public/images/name-opf-image.jpg' since public
     is already registered for all static files (stylesheets, images, etc.) -->
-    <img src="/images/ironhack-logo-white.jpg" alt="ironhack logo" width="150">
+<img src="/images/ironhack-logo-white.jpg" alt="ironhack logo" width="150" />
 
-    <ol>
-    {{#each hobbies}}
-        <li>
-            {{this}}
-        </li>
-    {{/each}}
-    </ol>
-    
-    <a href="/about"> Go to about page </a>
-</body>
-</html>
+<ol>
+  {{#if adult}}
+    <div>It's great you want to have a server</div>
+  {{else}}
+    <div>You are too young to have your own server</div>
+  {{/if}}
+
+  <li>Test LI</li>
+  {{#each hobbies}}
+    <li>
+      {{name}}
+    </li>
+  {{/each}}
+</ol>
+
+<a href="/about"> Go to about page </a>

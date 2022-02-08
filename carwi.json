@@ -1,0 +1,6 @@
+{
+  "name": "Carwi",
+  "hobbies": [{"name": "coding"}, {"name": "technology"}, {"name": "mountaneering"}],
+  "age": 31,
+  "adult": true
+}
